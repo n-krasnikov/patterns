@@ -1,6 +1,7 @@
 import { Singleton } from './src'
 import { Module } from './src'
 import { Observer } from './src'
+import { Factory } from './src'
 import './style.css'
 
 
@@ -43,6 +44,17 @@ Obs.subscribe(get);
 Obs.subscribe(getSlow);
 
 document.addEventListener('click', () => Obs.notify());
+
+/*-----------------------------*/
+
+const factory = new Factory();
+const cat = factory.create('cat', 'John', '5')
+const dog = factory.create('dog', 'Abram', '2')
+const rabbit = factory.create('rabbit', 'Bucks', '9')
+
+cat.say()
+dog.say()
+rabbit.say()
 
 /*-----------------------------*/
 
