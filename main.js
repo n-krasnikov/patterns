@@ -2,6 +2,8 @@ import { Singleton } from './src'
 import { Module } from './src'
 import { Observer } from './src'
 import { Factory } from './src'
+import { Facade } from './src'
+import { Pilot } from './src/Facade'
 import './style.css'
 
 
@@ -55,6 +57,20 @@ const rabbit = factory.create('rabbit', 'Bucks', '9')
 cat.say()
 dog.say()
 rabbit.say()
+
+/*-----------------------------*/
+
+const facade = new Facade()
+const pilot1 = new Pilot('John')
+const pilot2 = new Pilot('Richard')
+pilot2.ill();
+facade.flyable(pilot1, 'today')
+facade.flyable(pilot2, 'today')
+facade.flyable(pilot1, 'tomorrow')
+facade.flyable(pilot2, 'tomorrow')
+pilot2.recover();
+facade.flyable(pilot2, 'today')
+facade.flyable(pilot2, 'tomorrow')
 
 /*-----------------------------*/
 
