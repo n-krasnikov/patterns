@@ -4,6 +4,8 @@ import { Observer } from './src'
 import { Factory } from './src'
 import { Facade } from './src'
 import { Pilot } from './src/Facade'
+import { Decorator } from './src'
+import { Pizza } from './src/Decorator'
 import './style.css'
 
 
@@ -71,6 +73,20 @@ facade.flyable(pilot2, 'tomorrow')
 pilot2.recover();
 facade.flyable(pilot2, 'today')
 facade.flyable(pilot2, 'tomorrow')
+
+/*-----------------------------*/
+
+const pizza1 = new Pizza();
+const pizza2 = new Pizza();
+const pizza3 = new Pizza();
+
+Decorator(pizza1, 'small')
+Decorator(pizza2, null)
+Decorator(pizza3, 'large')
+
+console.log(pizza1)
+console.log(pizza2)
+console.log(pizza3)
 
 /*-----------------------------*/
 
